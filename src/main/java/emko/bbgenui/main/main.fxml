@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+
+<!-- <?scenebuilder-stylesheet app.css?> -->
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emko.bbgenui.main.MainPresenter">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="boardBtn" mnemonicParsing="false" onAction="#showBoard" text="Board" />
+            <Button fx:id="wordListBtn" mnemonicParsing="false" onAction="#showWordList" text="Word List" />
+         </children>
+      </HBox>
+      <AnchorPane fx:id="mainPane" prefHeight="480.0" prefWidth="640.0">
+<!--    <children>
+      <AnchorPane prefHeight="210.0" prefWidth="320.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+      	fx:id="subMainPane">
+      	<children>
+            <TableView prefHeight="240.0" prefWidth="310.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+      	</children>
+      </AnchorPane>
+   </children> -->
+</AnchorPane>
+   </children>
+</VBox>

@@ -1,0 +1,5 @@
+/* Resources like images to be used for small resolutions (96 dpi and less) */
+
+.binButtonSmall {
+	-fx-graphic: url(/icons/delete16.png)
+}
