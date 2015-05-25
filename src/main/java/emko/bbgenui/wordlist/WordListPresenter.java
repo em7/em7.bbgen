@@ -89,6 +89,7 @@ private class ButtonCell extends TableCell<WordViewModel, Boolean> {
 		
 	}
 
+// S V G   G R A P H I C   B U T T O N
 	
 //	private class ButtonCell extends TableCell<WordViewModel, Boolean> {
 //		

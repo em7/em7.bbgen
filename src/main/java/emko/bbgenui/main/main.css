@@ -1,0 +1,30 @@
+
+#screenNameLabel {
+	-fx-font-size: 4em;
+	-fx-padding: 0 0 0 0.5em;
+}
+
+.linkLabelBox {
+	-fx-min-height: 3em;
+	-fx-pref-height: 3em;
+	-fx-max-height: 3em;
+}
+
+.navLinkLabel {
+	-fx-min-width: 6em;
+	-fx-font-size: 1em;
+	-fx-font-weight: bold;
+	-fx-opacity: 70%;
+}
+
+.navLinkLabelSelected {
+	-fx-font-size: 1.1em;
+	-fx-font-weight: bold;
+	-fx-opacity: 100%;
+}
+
+.navLinkLabel:hover {
+	-fx-font-size: 1.1em;
+	-fx-font-weight: bold;
+	-fx-opacity: 100%;
+}

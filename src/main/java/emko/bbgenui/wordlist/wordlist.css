@@ -4,3 +4,18 @@
     -fx-padding: 10 10 10 10;
 }
 
+.menuLabelHeader {
+	-fx-font-size: 1.2em;
+	-fx-font-weight: bold;
+	-fx-padding: 0.5em 1em 0.5em 2em;
+}
+
+.menuBox {
+	-fx-min-width: 15em;
+	-fx-pref-width: 15em;
+}
+
+.menuLabelItem {
+	-fx-padding: 0.5em 0.5em 0.5em 3em;
+}
+

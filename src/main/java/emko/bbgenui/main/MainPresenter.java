@@ -3,9 +3,11 @@ package emko.bbgenui.main;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import emko.bbgenui.board.BoardView;
 import emko.bbgenui.wordlist.WordListView;
 import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
@@ -25,16 +27,21 @@ import javafx.scene.input.MouseEvent;
 
 public class MainPresenter implements Initializable {
 
-	@FXML AnchorPane mainPane;
-	//@FXML AnchorPane subMainPane;
-	
 	WordListView wordListView;
 	Parent wordListViewParent;
 	
 	BoardView boardView;
 	Parent boardViewParent;
+	
+	Parent currentViewParent;
+	
+	@FXML AnchorPane mainPane;
 
 	@FXML Label screenNameLabel;
+
+	@FXML Label boardLinkLabel;
+
+	@FXML Label wordsLinkLabel;
 
 
 	
@@ -61,17 +68,46 @@ public class MainPresenter implements Initializable {
 		this.boardViewParent = boardViewParent;
 
 		//add default view to graph
-		mainPane.getChildren().add(boardViewParent);		
+		mainPane.getChildren().add(boardViewParent);
+		
+		//set the link labels initial state
+		boardLinkLabel.getStyleClass().setAll("navLinkLabel", "navLinkLabelSelected");
+		currentViewParent = boardViewParent;
 	}
 
 	@FXML public void showBoard() {
+		if (currentViewParent == boardViewParent)
+			return; //don't set the view to self
+		
+		currentViewParent = boardViewParent;
+		
+		animateLinkLabelCliked(boardLinkLabel);
 		swipeContent(SwipeDirection.RIGHT, boardViewParent);
 		changeScreenName("Board");
+		boardLinkLabel.getStyleClass().setAll("navLinkLabel", "navLinkLabelSelected");
+		wordsLinkLabel.getStyleClass().setAll("navLinkLabel");
 	}
 	
 	@FXML public void showWordList() {
+		if (currentViewParent == wordListViewParent)
+			return; //don't set the view to self
+		
+		currentViewParent = wordListViewParent;
+		
+		animateLinkLabelCliked(wordsLinkLabel);
 		swipeContent(SwipeDirection.LEFT, wordListViewParent);
 		changeScreenName("Words");
+		boardLinkLabel.getStyleClass().setAll("navLinkLabel");
+		wordsLinkLabel.getStyleClass().setAll("navLinkLabel", "navLinkLabelSelected");
+	}
+
+	private void animateLinkLabelCliked(Label label) {		
+		ScaleTransition smallerTrans = new ScaleTransition(Duration.millis(50), label);
+		smallerTrans.setByX(-0.1);
+		smallerTrans.setByY(-0.1);
+		smallerTrans.setAutoReverse(true);
+		smallerTrans.setCycleCount(2);	
+		smallerTrans.play();
 	}
 
 	private enum SwipeDirection {
